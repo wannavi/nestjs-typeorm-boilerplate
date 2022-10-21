@@ -24,13 +24,9 @@ COPY --from=dependencies /app/node_modules ./node_modules
 RUN pnpm run build
 
 ## production stage
-FROM mcr.microsoft.com/playwright:next-jammy as production
+FROM base as production
 
 WORKDIR /app
-
-RUN apt-get update \
-  && apt-get install -y curl build-essential \
-  && curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 COPY --from=builder /app/package.json /app/pnpm-*.yaml  ./
 
