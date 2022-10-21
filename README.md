@@ -10,7 +10,20 @@
 - [ ] TypeORM
   - [x] TypeORM migrations (= way to incrementally update the database schema to keep  it sync with the application's data model)
     - [TypeORM Migrations Docs](https://typeorm.io/migrations#creating-a-new-migration)
-    - Thanks to https://stackoverflow.com/questions/59913475/configure-typeorm-with-one-configuration-for-cli-and-nestjs-application
   - [ ] TypeORM seeding
 - [ ] Unit testing
 - [ ] E2E testing
+
+
+### TypeORM CLI
+
+- [Migration](https://typeorm.io/migrations#)
+
+
+```bash
+$ pnpm run migration:create src/database/migrations/update-users-data
+$ pnpm run migration:generate src/database/migrations/init-users
+$ pnpm run migration:show
+$ pnpm run migration:run
+$ pnpm run migration:revert
+```

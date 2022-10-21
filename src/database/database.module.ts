@@ -25,7 +25,6 @@ import { join } from 'path';
             'base64',
           ).toString('ascii'),
         },
-        migrations: [join(__dirname, './migrations/*{.ts,.js}')],
       }),
     }),
   ],
