@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: server
+    ports:
+      - 3100:3100
+    environment:
+      - PUBLIC_SERVER_URL=http://localhost:3100
