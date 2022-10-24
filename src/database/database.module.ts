@@ -8,9 +8,7 @@ import { join } from 'path';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: async (
-        configService: ConfigService,
-      ): Promise<TypeOrmModuleOptions> => ({
+      useFactory: async (configService: ConfigService): Promise<TypeOrmModuleOptions> => ({
         type: 'postgres',
         host: configService.get<string>('postgres.host'),
         port: configService.get<number>('postgres.port'),
@@ -20,10 +18,9 @@ import { join } from 'path';
         synchronize: true,
         entities: [join(__dirname, '../../**/*.entity.ts')],
         ssl: configService.get<string>('postgres.certificate') && {
-          ca: Buffer.from(
-            configService.get<string>('postgres.certificate'),
-            'base64',
-          ).toString('ascii'),
+          ca: Buffer.from(configService.get<string>('postgres.certificate'), 'base64').toString(
+            'ascii',
+          ),
         },
       }),
     }),

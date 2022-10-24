@@ -8,6 +8,7 @@ import databaseConfig from './database.config';
 const validationSchema = Joi.object({
   // Application
   PORT: Joi.number().default(3100),
+  ENABLE_DOCUMENTATION: Joi.boolean().default(false),
 
   // Database
   POSTGRES_HOST: Joi.string().required(),
