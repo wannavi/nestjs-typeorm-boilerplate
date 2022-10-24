@@ -5,8 +5,8 @@ import { ConfigModule } from './config/config.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { HttpExceptionFilter } from './shared/filters/http-exception.filter';
 import { HealthModule } from './modules/health/health.module';
+import { HttpExceptionFilter } from './filters/http-exception.filter';
 
 @Module({
   imports: [ConfigModule, DatabaseModule, UsersModule, AuthModule, HealthModule],

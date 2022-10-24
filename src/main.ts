@@ -3,10 +3,6 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 import { Logger, ValidationPipe } from '@nestjs/common';
-import {
-  initializeTransactionalContext,
-  patchTypeORMRepositoryWithBaseRepository,
-} from 'typeorm-transactional-cls-hooked';
 import helmet from 'helmet';
 import compression from 'compression';
 
@@ -14,9 +10,6 @@ import { AppModule } from './app.module';
 import { setupSwagger } from './setup-swagger';
 
 const bootstrap = async () => {
-  initializeTransactionalContext();
-  patchTypeORMRepositoryWithBaseRepository();
-
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableShutdownHooks();
 

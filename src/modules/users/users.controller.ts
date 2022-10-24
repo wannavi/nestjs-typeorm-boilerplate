@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { Role } from '@/constants/role.enum';
-import { Roles } from '@/shared/decorators/roles.decorator';
+import { Roles } from 'src/decorators/roles.decorator';
 
 import { UsersService } from './users.service';
 

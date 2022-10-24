@@ -24,7 +24,10 @@
       "@/constants/*": ["src/constants/*"],
       "@/database/*": ["src/database/*"],
       "@/modules/*": ["src/modules/*"],
-      "@/shared/*": ["src/shared/*"]
+      "@/shared/*": ["src/shared/*"],
+      "@/decorators/*": ["src/decorators/*"],
+      "@/filters/*": ["src/filters/*"],
+      "@/guards/*": ["src/guards/*"]
     }
   }
 }
